@@ -1,0 +1,31 @@
+ceph_origin: repository
+ceph_repository: community
+ceph_stable_release: pacific
+public_network: "10.16.230.0/24"
+cluster_network: "10.16.230.0/24"
+cluster: ceph
+
+osd_auto_discovery: true
+
+osd_objectstore: bluestore
+osd_scenario: lvm
+
+mon_group_name: mons
+osd_group_name: osds
+mds_group_name: mdss
+mgr_group_name: mgrs
+
+
+ntp_service_enabled: true
+ntp_daemon_type: chronyd
+
+dashboard_enabled: False
+cephx: true
+rbd_cache: "false"
+
+ceph_conf_overrides:
+  global:
+    osd_pool_default_pg_num: 256
+    osd_journal_size: 5120
+    osd_pool_default_size: 3
+    osd_pool_default_min_size:  1
